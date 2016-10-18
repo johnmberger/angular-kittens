@@ -1,0 +1,25 @@
+<!-- sample angular code -->
+<div class="container">
+  <!-- <div class="col-md-12" ng-if="!mainCtrl.kittens.length">
+    <h1 class="text-center">No kittens currently.</h1>
+    <a href="/#/new" class="btn btn-block btn-primary">Create a kitten!</a>
+  </div> -->
+  <div class="row kitten" ng-repeat="kitten in mainCtrl.kittens">
+    <div class="col-md-4">
+      <img class="img-responsive" ng-src="{{kitten.url}}" />
+    </div>
+    <div class="col-md-8">
+      <h2>{{kitten.name}}</h2>
+      <p>
+        <strong>Bio</strong>
+        <br>
+        {{kitten.bio}}
+      </p>
+      <p>
+        <strong>Likes</strong>
+        <br>
+        {{kitten.likes}}
+      </p>
+    </div>
+  </div>
+</div>
