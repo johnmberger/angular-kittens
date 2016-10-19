@@ -1,9 +1,4 @@
-<!-- sample angular code -->
 <div class="container">
-  <!-- <div class="col-md-12" ng-if="!mainCtrl.kittens.length">
-    <h1 class="text-center">No kittens currently.</h1>
-    <a href="/#/new" class="btn btn-block btn-primary">Create a kitten!</a>
-  </div> -->
   <div class="row kitten" ng-repeat="kitten in mainCtrl.kittens">
     <div class="col-md-4">
       <img class="img-responsive" ng-src="{{kitten.url}}" />
@@ -19,6 +14,9 @@
         <strong>Likes</strong>
         <br>
         {{kitten.likes}}
+      </p>
+      <p>
+        <a ng-href="/#/comments/{{kitten.id}}">View Comments</a>
       </p>
     </div>
   </div>

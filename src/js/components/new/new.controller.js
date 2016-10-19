@@ -6,34 +6,36 @@
     .module('kittehs.components.new', [])
     .controller('newKittenController', newKittenController);
 
-  newKittenController.$inject = ['$scope', '$rootScope', '$location'];
+  newKittenController.$inject = ['kittenService', '$location'];
 
-  function newKittenController($scope, $rootScope, $location) {
+  function newKittenController(kittenService, $location) {
     /*jshint validthis: true */
+    var vm = this;
 
-    $rootScope.kittens = $rootScope.kittens || [{
-      name: 'John',
-      url: 'http://placekitten.com/300/230',
-      bio: 'He likes feathers and tuna',
-      likes: 0
-    }];
+    vm.name = '';
+    vm.url = '';
+    vm.bio = '';
 
-    this.name = '';
-    this.url = '';
-    this.bio = '';
+    vm.submitForm = function() {
 
-    this.submitForm = function() {
+      var newID = kittenService.kittens.length + 1;
 
-      $rootScope.kittens.push({
-        name: this.name,
-        url: this.url,
-        bio: this.bio,
-        likes: 0
+      kittenService.kittens.push({
+        id: newID,
+        name: vm.name,
+        url: vm.url,
+        bio: vm.bio,
+        likes: 1
       });
 
-      this.name = '';
-      this.url = '';
-      this.bio = '';
+      kittenService.comments.push({
+        kitten_id: newID,
+        comments: []
+      });
+
+      vm.name = '';
+      vm.url = '';
+      vm.bio = '';
       $location.path('/');
 
     };

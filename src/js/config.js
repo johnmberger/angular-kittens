@@ -18,6 +18,11 @@
       controller: 'newKittenController',
       controllerAs: 'newCtrl'
     })
+    .when('/comments/:id', {
+      templateUrl: 'js/components/comments/comments.view.html',
+      controller: 'commentController',
+      controllerAs: 'commentCtrl'
+    })
     .otherwise('/');
   }
 

@@ -7,9 +7,11 @@
   angular
     .module('kittehs', [
       'ngRoute',
+      'kittens',
       'kittehs.config',
       'kittehs.components.main',
-      'kittehs.components.new'
+      'kittehs.components.new',
+      'kittehs.components.comments'
     ]);
 
 })();

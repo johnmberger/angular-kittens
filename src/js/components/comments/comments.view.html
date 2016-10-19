@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row kitten">
+    <div class="col-md-4">
+      <img class="img-responsive" ng-src="{{commentCtrl.kitten.url}}" />
+    </div>
+    <div class="col-md-8">
+      <h2>{{commentCtrl.kitten.name}}</h2>
+      <p>
+        <strong>Bio</strong>
+        <br>
+        {{commentCtrl.kitten.bio}}
+      </p>
+      <p>
+        <strong>Likes</strong>
+        <br>
+        {{commentCtrl.kitten.likes}}
+      </p>
+      <h3>Comments:</h3>
+      <p ng-repeat="comment in commentCtrl.comments">
+        {{comment}}
+      </p>
+      <form ng-submit="commentCtrl.addComment()" ng-if="commentCtrl.showCommentForm">
+        <input type="text" name="comment" ng-model="commentCtrl.comment">
+        <input type="submit" class="btn btn-primary" value="Add Comment">
+      </form>
+      <a ng-if="!commentCtrl.showCommentForm" ng-click="commentCtrl.showCommentForm = !commentCtrl.showCommentForm">Add Comment</a>
+    </div>
+  </div>
+</div>

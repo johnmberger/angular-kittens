@@ -6,19 +6,13 @@
     .module('kittehs.components.main', [])
     .controller('mainController', mainController);
 
-  mainController.$inject = ['$scope', '$rootScope'];
+  mainController.$inject = ['kittenService'];
 
-  function mainController($scope, $rootScope) {
+  function mainController(kittenService) {
     /*jshint validthis: true */
+    var vm = this;
 
-    $rootScope.kittens = $rootScope.kittens || [{
-      name: 'John',
-      url: 'http://placekitten.com/300/230',
-      bio: 'He likes feathers and tuna',
-      likes: 0
-    }];
-
-    this.kittens = $rootScope.kittens;
+    vm.kittens = kittenService.kittens;
 
   }
 
