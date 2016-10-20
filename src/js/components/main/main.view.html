@@ -14,6 +14,7 @@
         <strong>Likes</strong>
         <br>
         {{kitten.likes}}
+        <span><i like-button index="{{kitten.id - 1}}" class="fa fa-thumbs-o-up" aria-hidden="true"></i></span>
       </p>
       <p>
         <a ng-href="/#/comments/{{kitten.id}}">View Comments</a>

@@ -5,6 +5,6 @@
 .kitten {
   margin-bottom: 20px;
 }
-a {
+a, i {
   cursor: pointer;
 }

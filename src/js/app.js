@@ -8,6 +8,7 @@
     .module('kittehs', [
       'ngRoute',
       'kittens',
+      'likeDirective',
       'kittehs.config',
       'kittehs.components.main',
       'kittehs.components.new',

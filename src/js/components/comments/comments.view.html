@@ -14,6 +14,7 @@
         <strong>Likes</strong>
         <br>
         {{commentCtrl.kitten.likes}}
+        <span><i like-button index="{{commentCtrl.kitten.id - 1}}" class="fa fa-thumbs-o-up" aria-hidden="true"></i></span>
       </p>
       <h3>Comments:</h3>
       <p ng-repeat="comment in commentCtrl.comments">

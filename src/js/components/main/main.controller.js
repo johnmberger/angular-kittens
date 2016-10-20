@@ -11,9 +11,7 @@
   function mainController(kittenService) {
     /*jshint validthis: true */
     var vm = this;
-
     vm.kittens = kittenService.kittens;
-
   }
 
 })();
